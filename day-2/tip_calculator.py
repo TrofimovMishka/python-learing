@@ -7,6 +7,13 @@ persons = int(input("How many people to spit the bill? "))
 
 total_bill = (bill * tip_percentage) / 100 + bill
 
-result = round(total_bill / persons, 2)
+result = total_bill / persons
 
-print(f"each person should pay: ${result}")
+#The same output for all print: How round numbers in py
+
+print(f"each person should pay: ${round(result, 2)}") # round this: 10232.06831212 to this 10232.07
+print("%.2f" % result) # round this: 10232.06831212 to this 10232.07
+print("{:.2f}".format(result)) # round this: 10232.06831212 to this 10232.07
+
+print("%.3f" % result) # round this: 10232.06831212 to this 10232.068
+print(("{:.4f}".format(result))) # round this: 10232.06831212 to this 10232.0683
