@@ -11,9 +11,9 @@ result = total_bill / persons
 
 #The same output for all print: How round numbers in py
 
-print(f"each person should pay: ${round(result, 2)}") # round this: 10232.06831212 to this 10232.07
-print("%.2f" % result) # round this: 10232.06831212 to this 10232.07
-print("{:.2f}".format(result)) # round this: 10232.06831212 to this 10232.07
+print(f"each person should pay: ${round(result, 2)}") # round this: 10232.06831212 to this 10232.07, AND this 12.6 to 12.6
+print("%.2f" % result) # round this: 10232.06831212 to this 10232.07 AND this 12.6 to 12.60
+print("{:.2f}".format(result)) # round this: 10232.06831212 to this 10232.07 AND this 12.6 to 12.60
 
-print("%.3f" % result) # round this: 10232.06831212 to this 10232.068
-print(("{:.4f}".format(result))) # round this: 10232.06831212 to this 10232.0683
+print("%.3f" % result) # round this: 10232.06831212 to this 10232.068 AND this 12.6 to 12.60
+print(("{:.4f}".format(result))) # round this: 10232.06831212 to this 10232.0683  AND this 12.6 to 12.60
