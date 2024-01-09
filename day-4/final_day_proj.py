@@ -30,7 +30,7 @@ scissors = '''
 list = [rock, paper, scissors]
 
 print("Your chose: ")
-print(list[user_chose])
+# print(list[user_chose])
 
 comp_chose = random.randint(0, 2)
 
