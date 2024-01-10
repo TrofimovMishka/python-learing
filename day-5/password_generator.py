@@ -13,12 +13,15 @@ password_list = []
 
 for i in range(1, count_letters):
     password_list.append(letters[random.randint(1, len(letters)-1)])
+    # random.choice(letters) -> this return pseudo random letter from list
 
 for i in range(1, count_symbols):
     password_list.append(symbols[random.randint(1, len(symbols)-1)])
+    # random.choice(symbols) -> this return pseudo random letter from list
 
 for i in range(1, count_numbers):
     password_list.append(numbers[random.randint(1, len(numbers)-1)])
+    # random.choice(numbers) -> this return pseudo random letter from list
 
 password = ''
 
