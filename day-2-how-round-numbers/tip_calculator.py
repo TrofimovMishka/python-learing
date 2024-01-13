@@ -1,3 +1,5 @@
+import math
+
 print("Welcome to the tip calculator.")
 bill = float(input("What was the total bill? $"))
 tip_percentage = int(input("What percentage tip would you like to give? 10, 12 or 15? "))
@@ -17,3 +19,6 @@ print("{:.2f}".format(result)) # round this: 10232.06831212 to this 10232.07 AND
 
 print("%.3f" % result) # round this: 10232.06831212 to this 10232.068 AND this 12.6 to 12.60
 print(("{:.4f}".format(result))) # round this: 10232.06831212 to this 10232.0683  AND this 12.6 to 12.60
+print(("{:.4f}".format(result))) # round this: 10232.06831212 to this 10232.0683  AND this 12.6 to 12.60
+
+print(round(math.ceil(result))) # round this: 1.3 to this 2  AND this 1.9 to 2
