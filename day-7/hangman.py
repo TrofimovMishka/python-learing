@@ -1,25 +1,23 @@
 import random
+import hangman_art
+import hangman_words
+import os
+from time import sleep
 
 
-# TODO-2: - Loop through each position in the chosen_word;
-# If the letter at that position matches 'guess' then reveal that letter in the display at that position.
-# e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
-
-# TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
-# Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
 def lets_start():
-    print('welcome to HANGMAN game!')
+    print(hangman_art.logo)
+    print('\n')
 
 
-lives = 9
-word_list = ['baboon', 'fruit', 'happiness', 'looser', 'expectations']
+lives = 6
 user_input = ''
-chosen_word = random.choice(word_list)
+chosen_word = random.choice(hangman_words.word_list)
 chosen_word_array = []
 
 
 def is_live():
-    return lives > 0
+    return lives >= 0
 
 
 def gues_a_letter():
@@ -49,14 +47,20 @@ def is_letter_in():
     return chosen_word.__contains__(user_input)
 
 
-lets_start()
-print(chosen_word)
-
 fill_array()
 
 while is_live():
-    global lives
-    gues_a_letter()
+    sleep(0.5)
+    os.system('clear')
+
+    lets_start()
     output_guessed_letters()
+    print(hangman_art.stages[lives])
+    gues_a_letter()
+
     if not is_letter_in():
+        print(f'You choose letter [{user_input}], that not in word, that means you loose live')
+        sleep(1.5)
         lives -= 1
+    if lives < 0:
+        print('You loose')
