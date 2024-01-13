@@ -26,7 +26,6 @@ def gues_a_letter():
 
 
 def output_guessed_letters():
-    global lives
 
     for i in range(1, len(chosen_word) + 1):
         letter_in_word = chosen_word[i - 1]
