@@ -1,0 +1,2 @@
+Prefer use newest version of Python Interpreter (3.11 in my case for now)
+Use Ctrl+Alt+S (settings) got to Project: xxxx / Python interpreter/ + / find lib to add / Install Package
