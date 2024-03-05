@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import pyperclip
 
 import password_generator
 
@@ -14,7 +15,9 @@ GREEN = '#007f00'
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_pass():
-    input_password.insert(END, password_generator.get_password())
+    password = password_generator.get_password()
+    input_password.insert(END, password)
+    pyperclip.copy(password)  # how add this line to copy buffer - than you can use Ctrl+V to paste it
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
