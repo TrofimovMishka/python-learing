@@ -1,5 +1,7 @@
+import json
 from tkinter import *
 from tkinter import messagebox
+
 import pyperclip
 
 import password_generator
@@ -28,15 +30,24 @@ def add_pass():
     password = input_password.get()
 
     result = f'{web} | {username} | {password} \n'
+    # How create a json (dictionary):
+    new_data = {
+        web: {
+            "email": username,
+            "password": password
+        }
+    }
 
     if len(web) < 1 or len(password) < 1:
         messagebox.showwarning("Ooops", "Please don't leave any empty fields")
     else:
-        is_ok = messagebox.showinfo(f"Save for {web}",
-                                    f"Your really want to save: \n Email: {username} \n Password: {password}")
-        if is_ok:
-            with open("my_passwords.txt", mode="a") as file:
-                file.write(result)
+        # is_ok = messagebox.showinfo(f"Save for {web}",
+        #                             f"Your really want to save: \n Email: {username} \n Password: {password}")
+        # if is_ok:
+        with open("my_passwords.txt", mode="w") as file:
+            # file.write(result)
+            json.dump(new_data, file, indent=4)  # use json module to write json to file;
+            # indent=4 => make pretty formatted json view
             input_website.delete(0, END)
             input_password.delete(0, END)
 
