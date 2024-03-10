@@ -37,7 +37,16 @@ dict_form = {row.letter: row.code for (index, row) in data.iterrows()}
 
 # TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 
-user_input = input("Enter a word: ").upper()
 
-result = [dict_form[w] for w in user_input]
-print(result)
+
+is_input_incorrect = True
+
+while is_input_incorrect:
+    user_input = input("Enter a word: ").upper()
+    try:
+        result = [dict_form[w] for w in user_input]
+    except KeyError:
+        print("Sorry, only letters please")
+    else:
+        print(result)
+        is_input_incorrect = False
