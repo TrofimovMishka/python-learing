@@ -9,8 +9,11 @@ my_email = 'mykhailo.trofimov@gmail.com'
 guest_email = 'hamann.trofimov@gmail.com'
 dron_email = 'andrii.linkoln@gmail.com'
 
-with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-    connection.starttls()  # enable TLS - encrypt message
-    connection.login(user=my_email, password=APP_PASS)
 
-    connection.sendmail(from_addr=my_email, to_addrs=guest_email, msg='Subject: TEST app\n\n\nHello from app')
+def send_mail(message):
+    with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+        connection.starttls()  # enable TLS - encrypt message
+        connection.login(user=my_email, password=APP_PASS)
+
+        connection.sendmail(from_addr=my_email, to_addrs=guest_email,
+                            msg=f'Subject: Message from Python application\n\n\n{message}')
