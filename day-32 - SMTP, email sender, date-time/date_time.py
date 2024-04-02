@@ -35,4 +35,4 @@ if wk == 0: # send only in sunday
             # print(type(data))
             row = random.choice(data)
             print(f'This row will be send to user: {row}')
-            my_email.send_mail(row)
+            my_email.send_mail(row, 'Test from python app', 'hamann.trofimov@gmail.com')

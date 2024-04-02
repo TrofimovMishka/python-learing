@@ -10,10 +10,10 @@ guest_email = 'hamann.trofimov@gmail.com'
 dron_email = 'andrii.linkoln@gmail.com'
 
 
-def send_mail(message):
+def send_mail(message, subject, email):
     with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
         connection.starttls()  # enable TLS - encrypt message
         connection.login(user=my_email, password=APP_PASS)
 
-        connection.sendmail(from_addr=my_email, to_addrs=guest_email,
-                            msg=f'Subject: Message from Python application\n\n\n{message}')
+        connection.sendmail(from_addr=my_email, to_addrs=email,
+                            msg=f'Subject: {subject}\n\n\n{message}')
