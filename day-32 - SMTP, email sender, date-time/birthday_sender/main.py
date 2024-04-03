@@ -24,7 +24,7 @@ PLACEHOLDER = "[NAME]"
 TODAY = dt.datetime.now()
 HOST = 'smtp.gmail.com'
 PORT = 587
-APP_PASS = 'cybu ceza kybd gpjy'
+APP_PASS = 'to generate'
 MY_EMAIL = 'mykhailo.trofimov@gmail.com'
 def send_mail(email, subject, message):
     with smtplib.SMTP(host=HOST, port=PORT) as connection:
