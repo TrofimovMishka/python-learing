@@ -1,7 +1,7 @@
 GMAIL = 'smtp.gmail.com'
 # NOTE: under this link https://myaccount.google.com/apppasswords add app pass in your account and use in your app - delete this pass after usage!
 # 2-f authentication must be ON on google account
-APP_PASS = 'cybu ceza kybd gpjy'
+APP_PASS = 'to generATE'
 
 import smtplib
 
