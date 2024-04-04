@@ -11,7 +11,7 @@ dron_email = 'andrii.linkoln@gmail.com'
 
 
 def send_mail(message, subject, email):
-    with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+    with smtplib.SMTP(GMAIL, port=587) as connection:
         connection.starttls()  # enable TLS - encrypt message
         connection.login(user=my_email, password=APP_PASS)
 
