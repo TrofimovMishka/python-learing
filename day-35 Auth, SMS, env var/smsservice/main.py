@@ -23,7 +23,11 @@ auth_token = '$$$$'
 # How set var from console:
 # export TEST_VAR=hello
 
-os.environ.get("TEST_VAR") # access to var from code
+os.environ.get("TEST_VAR") # access to var from code - return None if key doesn't exist
+# OR
+os.environ.get("TEST_VAR", "Some message") # access to var from code - return "Some message" if key doesn't exist
+# OR
+os.environ["TEST_VAR"] # access to var from code - raise exception if key doesn't exist
 
 client = Client(account_sid, auth_token)
 
